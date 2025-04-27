@@ -78,10 +78,10 @@ endif;
     <header>
         <div class="container text-center">
             <a href="https://cakephp.org/" target="_blank" rel="noopener">
-                <img alt="CakePHP" src="https://cakephp.org/v2/img/logos/CakePHP_Logo.svg" width="350" />
+                <?= $this->ContentBlock->image('logo'); ?>
             </a>
             <h1>
-                Welcome to CakePHP <?= h(Configure::version()) ?> Chiffon (🍰)
+                <?= $this->ContentBlock->text('website-title'); ?>
             </h1>
         </div>
     </header>
@@ -91,8 +91,11 @@ endif;
                 <div class="row">
                     <div class="column">
                         <div class="message default text-center">
+                            <?= $this->Html->link('Content Blocks', ['plugin' => 'ContentBlocks', 'controller' => 'ContentBlocks', 'action' => 'index']) ?>
                             <small>Please be aware that this page will not be shown if you turn off debug mode unless you replace templates/Pages/home.php with your own version.</small>
+                            <?= $this->ContentBlock->html('contact-us'); ?>
                         </div>
+                        
                         <div id="url-rewriting-warning" style="padding: 1rem; background: #fcebea; color: #cc1f1a; border-color: #ef5753;">
                             <ul>
                                 <li class="bullet problem">
